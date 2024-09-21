@@ -27,6 +27,10 @@ Route::middleware('guest')->group(function () {
         ->name('social.login')
         ->where('driver', implode('|', config('auth.socialite.drivers')));
 
+    Route::get('{driver}/callback', [SocialLoginController::class, 'handleProviderCallback'])
+        ->name('social.callback')
+        ->where('driver', implode('|', config('auth.socialite.drivers')));
+
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
         ->name('password.request');
 
