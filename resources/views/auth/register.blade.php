@@ -44,6 +44,10 @@
                 {{ __('Already registered?') }}
             </a>
 
+            <x-primary-button-link class="mr-2 ml-2" :href="route('social.login', 'google')">
+                {{ __('Login with Google') }}
+            </x-primary-button-link>
+
             <x-primary-button class="ms-4">
                 {{ __('Register') }}
             </x-primary-button>
